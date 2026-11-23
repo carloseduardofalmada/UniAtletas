@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>UniAtletas — Rotina acadêmica e esportiva</title>
+<link rel="icon" href="logo-marca.png">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<section id="auth" class="auth" hidden>
+  <div class="auth-box">
+    <img src="logo.png" alt="UniAtletas — plataforma para atletas universitários" class="auth-logo">
+    <div class="tabs" role="tablist">
+      <button type="button" role="tab" data-tab="login" aria-selected="true">Entrar</button>
+      <button type="button" role="tab" data-tab="register" aria-selected="false">Criar conta</button>
+    </div>
+    <form id="loginForm" novalidate>
+      <div class="field"><label for="lEmail">E-mail</label><input id="lEmail" type="email" autocomplete="username"></div>
+      <div class="field"><label for="lPass">Senha</label><input id="lPass" type="password" autocomplete="current-password"></div>
+      <p class="error" id="lErr" role="alert"></p>
+      <button class="btn primary block" type="submit">Entrar</button>
+      <p class="muted small">Contas de demonstração (senha 1234): atleta@uni.br · aluno@uni.br · rep@uni.br</p>
+    </form>
+    <form id="regForm" novalidate hidden>
+      <div class="field"><label for="rName">Nome</label><input id="rName" autocomplete="name"></div>
+      <div class="field"><label for="rEmail">E-mail</label><input id="rEmail" type="email" autocomplete="username"></div>
+      <div class="field"><label for="rPass">Senha (mínimo 4 caracteres)</label><input id="rPass" type="password" autocomplete="new-password"></div>
+      <div class="field"><label for="rRole">Perfil</label>
+        <select id="rRole"><option value="atleta">Atleta universitário</option><option value="aluno">Estudante não atleta</option></select></div>
+      <p class="error" id="rErr" role="alert"></p>
+      <button class="btn primary block" type="submit">Criar conta</button>
+    </form>
+  </div>
+</section>
+
+<div id="app" class="app" hidden>
+  <header class="top">
+    <a class="brand" href="#" data-home aria-label="UniAtletas, início"><img src="logo-marca.png" alt=""><span>UniAtletas</span></a>
+    <nav id="nav" class="nav" aria-label="Principal"></nav>
+    <div class="tools">
+      <button class="icon" id="bell" type="button" aria-label="Lembretes">🔔<span id="bellN" class="badge" hidden>0</span></button>
+      <button class="icon" id="fontDown" type="button" aria-label="Diminuir texto">A−</button>
+      <button class="icon" id="fontUp" type="button" aria-label="Aumentar texto">A+</button>
+      <button class="icon" id="theme" type="button" aria-label="Alternar tema claro e escuro">◐</button>
+      <span class="who" id="who"></span>
+      <button class="btn ghost" id="logout" type="button">Sair</button>
+    </div>
+  </header>
+  <main id="view" class="view" tabindex="-1"></main>
+  <footer class="foot">Protótipo acadêmico · Squad 5 · UCB 2026. Dados fictícios armazenados apenas neste navegador.</footer>
+</div>
+
+<dialog id="dlg"></dialog>
+<div id="toasts" class="toasts" aria-live="polite"></div>
+
+<script src="app.js"></script>
+</body>
+</html>
